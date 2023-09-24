@@ -17,6 +17,8 @@ services:
     ports:
       - 3336:3336
     restart: unless-stopped
+    volumes:
+      - "./data/users.sql:/docker-entrypoint-initdb.d/userdata.sql"
     
   phpmyadmin:
     depends_on:

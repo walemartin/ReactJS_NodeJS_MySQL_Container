@@ -11,7 +11,7 @@ COPY . /app
 
 #RUN  npm rebuild bcrypt --update-binary
 RUN apk add --no-cache make gcc g++ python3
-#run npm rebuild
-#npm rebuild bcrypt --update-binary && rm -rf package-lock.json 
+#RUN adduser -D -u 1001 -g 1001 nonroot
+#USER nonroot 
 RUN npm install
 CMD ["npm", "start"]
